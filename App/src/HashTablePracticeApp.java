@@ -4,16 +4,14 @@ public class HashTablePracticeApp {
 
     public static void main(String[] args) {
 
-        String text = "java is easy and java is powerful";
+        HashMap<String,Integer> pageViews = new HashMap<>();
 
-        String[] words = text.split(" ");
+        pageViews.put("/home",150);
+        pageViews.put("/products",90);
+        pageViews.put("/contact",30);
 
-        HashMap<String,Integer> wordCount = new HashMap<>();
-
-        for(String word : words){
-            wordCount.put(word, wordCount.getOrDefault(word,0)+1);
+        for(String page : pageViews.keySet()){
+            System.out.println(page + " views: " + pageViews.get(page));
         }
-
-        System.out.println(wordCount);
     }
 }
