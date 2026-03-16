@@ -4,16 +4,14 @@ public class HashTablePracticeApp {
 
     public static void main(String[] args) {
 
-        HashMap<String,Integer> requestCount = new HashMap<>();
+        HashMap<String,Integer> queries = new HashMap<>();
 
-        String user = "client1";
+        queries.put("java tutorial",5);
+        queries.put("java hashmap",3);
+        queries.put("java interview questions",8);
 
-        requestCount.put(user, requestCount.getOrDefault(user,0)+1);
-
-        if(requestCount.get(user) > 5){
-            System.out.println("Rate limit exceeded");
-        } else {
-            System.out.println("Request allowed");
+        for(String q : queries.keySet()){
+            System.out.println(q + " -> " + queries.get(q));
         }
     }
 }
