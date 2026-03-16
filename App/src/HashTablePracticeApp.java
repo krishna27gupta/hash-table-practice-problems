@@ -4,18 +4,18 @@ public class HashTablePracticeApp {
 
     public static void main(String[] args) {
 
-        HashMap<String,Integer> users = new HashMap<>();
+        HashMap<String,String> dnsCache = new HashMap<>();
 
-        users.put("john_doe",1);
-        users.put("alice",2);
+        dnsCache.put("google.com","142.250.183.14");
+        dnsCache.put("github.com","140.82.114.3");
+        dnsCache.put("stackoverflow.com","151.101.65.69");
 
-        String username = "john_doe";
+        String domain = "github.com";
 
-        if(users.containsKey(username)){
-            System.out.println("Username already taken");
+        if(dnsCache.containsKey(domain)){
+            System.out.println("IP Address: " + dnsCache.get(domain));
         } else {
-            System.out.println("Username available");
+            System.out.println("Domain not found");
         }
-
     }
 }
