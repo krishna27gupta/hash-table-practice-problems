@@ -4,18 +4,16 @@ public class HashTablePracticeApp {
 
     public static void main(String[] args) {
 
-        HashMap<String,String> dnsCache = new HashMap<>();
+        String text = "java is easy and java is powerful";
 
-        dnsCache.put("google.com","142.250.183.14");
-        dnsCache.put("github.com","140.82.114.3");
-        dnsCache.put("stackoverflow.com","151.101.65.69");
+        String[] words = text.split(" ");
 
-        String domain = "github.com";
+        HashMap<String,Integer> wordCount = new HashMap<>();
 
-        if(dnsCache.containsKey(domain)){
-            System.out.println("IP Address: " + dnsCache.get(domain));
-        } else {
-            System.out.println("Domain not found");
+        for(String word : words){
+            wordCount.put(word, wordCount.getOrDefault(word,0)+1);
         }
+
+        System.out.println(wordCount);
     }
 }
