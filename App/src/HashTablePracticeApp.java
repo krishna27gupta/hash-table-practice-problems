@@ -4,23 +4,17 @@ public class HashTablePracticeApp {
 
     public static void main(String[] args) {
 
-        int[] arr = {10,20,30,40};
-        int target = 50;
+        HashMap<String,String> cache = new HashMap<>();
 
-        HashMap<Integer,Integer> map = new HashMap<>();
+        cache.put("user1","data1");
+        cache.put("user2","data2");
 
-        for(int i=0;i<arr.length;i++){
+        String key = "user1";
 
-            int complement = target - arr[i];
-
-            if(map.containsKey(complement)){
-                System.out.println("Pair found: " + complement + " + " + arr[i]);
-                return;
-            }
-
-            map.put(arr[i],i);
+        if(cache.containsKey(key)){
+            System.out.println("Cache hit: " + cache.get(key));
+        } else {
+            System.out.println("Cache miss");
         }
-
-        System.out.println("No pair found");
     }
 }
