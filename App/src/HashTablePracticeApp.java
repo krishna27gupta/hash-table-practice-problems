@@ -4,17 +4,23 @@ public class HashTablePracticeApp {
 
     public static void main(String[] args) {
 
-        HashMap<Integer,String> parking = new HashMap<>();
+        int[] arr = {10,20,30,40};
+        int target = 50;
 
-        parking.put(1,"TN10AB1234");
-        parking.put(2,"TN09XY5678");
+        HashMap<Integer,Integer> map = new HashMap<>();
 
-        int slot = 1;
+        for(int i=0;i<arr.length;i++){
 
-        if(parking.containsKey(slot)){
-            System.out.println("Car parked: " + parking.get(slot));
-        } else {
-            System.out.println("Slot empty");
+            int complement = target - arr[i];
+
+            if(map.containsKey(complement)){
+                System.out.println("Pair found: " + complement + " + " + arr[i]);
+                return;
+            }
+
+            map.put(arr[i],i);
         }
+
+        System.out.println("No pair found");
     }
 }
